@@ -49,11 +49,29 @@ public class Communication extends Thread{
             OutputStreamWriter osw = new OutputStreamWriter(os);
             bw = new BufferedWriter(osw);
 
+            receiveMessage();
+
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void receiveMessage() {
+        new Thread(
+                () -> {
+                    while(true) {
+                        try {
+                            String msg = bf.readLine(); //Stops program until there is a message
+
+                            observer.notifyMessage(msg);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
     }
 
     public void sendMessage(String message) {

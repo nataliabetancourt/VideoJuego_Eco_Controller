@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements IObserver{
 
     @Override
     public void notifyMessage(String message) {
-
+        runOnUiThread(()->{
+            scoreValueTxt.setText(message);
+        });
     }
 }

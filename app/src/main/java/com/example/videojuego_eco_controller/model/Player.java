@@ -13,7 +13,6 @@ public class Player {
         this.x = x;
         this.y = y;
         this.speed = 30;
-        this.coolDown = 0;
         this.width = 55;
         this.height = 115;
         this.action = action;
