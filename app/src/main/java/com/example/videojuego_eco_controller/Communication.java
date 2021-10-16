@@ -36,7 +36,7 @@ public class Communication extends Thread{
     private void initCom(){
         try {
             System.out.println("Conectandose al servidor...");
-            connection = new Socket("10.0.2.2", 9000);
+            connection = new Socket("192.168.39.171", 9000);
             System.out.println("Cliente conectado");
 
             //To receive
